@@ -20,7 +20,7 @@ export default function Footer() {
                     <li className="nav-item"><Link href="#" className="nav-link px-2 text-body-secondary">Contact</Link></li>
                 </ul>
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <p className="text-center text-body-secondary">© 2023 Company, Inc</p>
+                    <p className="text-center text-body-secondary">© 2023 Glamazon, Inc</p>
                     <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
                         <li className="ms-3"><Link className="text-body-secondary" href="#"><svg className="bi" width="24" height="24"></svg></Link></li>
                         <li className="ms-3"><Link className="text-body-secondary" href="#"><svg className="bi" width="24" height="24"></svg></Link></li>

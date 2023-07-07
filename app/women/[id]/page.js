@@ -1,26 +1,41 @@
-export default function Page({ params }) {
-    let category = params.id.replace(/-|and/g, item => item === '-' ? ' ' : '&')
-    return <p>{category.toUpperCase()} FOR WOMEN</p>
+import clientPromise from "../../../lib/mongodb";
+
+async function getProducts( type ) {
+   try {
+       const client = await clientPromise;
+       const db = client.db("women");
+
+       const products = await db
+           .collection("products")
+           .find({ category: type })
+           .toArray();
+           
+        return products
+   } catch (e) {
+       console.error(e);
+   }
 }
 
-// import axios from 'axios';
+export default async function Page({ params }) {
+    let productData = getProducts(params.id)
+    let [products] = await Promise.all([productData])
 
-// function ProductList() {
-//     const options = {
-//         method: 'GET',
-//         url: 'https://google-data-scraper.p.rapidapi.com/search/shop/shirt',
-//         params: {api_key: process.env.NEXT_PUBLIC_API_KEY},
-//         headers: {
-//           'X-RapidAPI-Key': 'ddec3f077cmsh771cd7137c7324fp14e8abjsne3d5ff2e4a6a',
-//           'X-RapidAPI-Host': 'google-data-scraper.p.rapidapi.com'
-//         }
-//     };
-      
-//     axios.request(options).then(function (response) {
-//         console.log(response.data.shopping_results);
-//     }).catch(function (error) {
-//         console.error(error);
-//     });
-// }
+    let category = params.id.replace(/-|and/g, item => item === '-' ? ' ' : '&')
 
-// export default ProductList;
+    return (
+        <>
+            <h2>{category.toUpperCase()} FOR WOMEN</h2>
+            <ul>{Array.from(products).map((item,i) => {
+                return (
+                    <div className="card" style={{width: 18 + "rem"}}>
+                        <img src={item.img} className="card-img-top" alt={`Picture of Women's ${item.title}`}/>
+                        <div className="card-body">
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text">${item.price}</p>
+                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>)
+            })}</ul>
+        </>
+    )
+}
