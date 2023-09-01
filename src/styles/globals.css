@@ -59,7 +59,8 @@ nav {
     padding: 0;
 }
 
-a:visited {
+a:visited,
+.dropdown {
     color: darkslategray;
 }
 
@@ -67,9 +68,22 @@ a:visited {
     padding-right: 20px;
 }
 
-.nav-item a {
+.nav-item a,
+.dropdown-item {
     width: 100%;
     display: block;
+}
+
+.dropdown-item,
+.dropdown-item:visited,
+.dropdown-item:hover {
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color:rgb(51, 86, 87);
 }
 
 .cs {
@@ -87,10 +101,14 @@ a:visited {
     border-radius: 5px 5px 0 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .dropdown-menu {
     position: absolute;
     background-color: cadetblue;
-    padding: 10px;
+    padding: 2px;
     border: 2px solid;
     border-radius: 5px;
 }
@@ -131,17 +149,30 @@ a:visited {
         padding-right: 0;
     }
 
-    .nav-item a {
+    .nav-item a,
+    .dropdown-item,
+    .dropdown {
         padding: 8px;
     }
 
     .nav-item a,
-    .nav-item a:visited {
+    .nav-item a:visited,
+    .dropdown-item,
+    .dropdown {
         color: white;
     }
 
-    .nav-item a:hover, .nav-item a:visited:hover {
+    .nav-item:hover,
+    .nav-item a:visited:hover,
+    .dropdown-item:hover {
         background-color:rgb(51, 86, 87);
+        border-radius: 5px;
+    }
+
+    .dropdown-menu {
+        margin-top: 8px;
+        position: relative;
+        border-color: white;
     }
 }
 

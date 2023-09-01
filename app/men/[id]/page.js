@@ -33,7 +33,7 @@ export default async function Page({ params }) {
                     <>
                         <div key={item._id} className="col" data-bs-toggle="modal" data-bs-target={`#productModal${item._id}`}>
                             <div className="card h-100">
-                                <Image src={item.img} className="card-img-top h-100" alt={`Picture of Men's ${item.title}`}/>
+                                <Image src={item.img} className="card-img-top h-100" alt={`Picture of Men's ${item.title}`} fill/>
                                 <div className="card-body">
                                     <h6 className="card-title lead">{item.title}</h6>
                                     <p className="card-title lead">${item.price}</p>

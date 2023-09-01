@@ -1,8 +1,5 @@
 "use client"
 
-import Link from 'next/link'
-import Image from 'next/image'
-
 export default function Collapse() {
 
     function collapseDisplay() {
@@ -34,7 +31,6 @@ export default function Collapse() {
                 <div id='collapseS'></div>
                 <div id='collapseT'></div>
             </div>
-            {/* <Image className='collapse-button' id="collapse-nav" src="/hamburger.png" alt="hamburger menu" onClick={collapseDisplay} width={0} height={20} /> */}
         </>
     )
 }
