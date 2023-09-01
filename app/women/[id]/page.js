@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import clientPromise from "../../../lib/mongodb";
 
 async function getProducts( type ) {
@@ -27,8 +28,8 @@ export default async function Page({ params }) {
             <h2>{category.toUpperCase()} FOR WOMEN</h2>
             <ul>{Array.from(products).map((item,i) => {
                 return (
-                    <div className="card" style={{width: 18 + "rem"}}>
-                        <img src={item.img} className="card-img-top" alt={`Picture of Women's ${item.title}`}/>
+                    <div key={item._id} className="card" style={{width: 18 + "rem"}}>
+                        <Image src={item.img} className="card-img-top" alt={`Picture of Women's ${item.title}`}/>
                         <div className="card-body">
                             <h5 className="card-title">{item.title}</h5>
                             <p className="card-text">${item.price}</p>

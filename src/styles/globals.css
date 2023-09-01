@@ -1,10 +1,241 @@
-.modal-content {
-    box-shadow: 5px 5px 7px #636262,
-                5px 5px 7px #636262;
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    color: darkslategray;
 }
+
+
+body {
+    background-color:honeydew;
+}
+
 /* 
 .card {
     height: 100px;
     width: 100px;
     border: 2px solid black
 } */
+
+div.notice {
+    font-size: small;
+    color: black;
+    background-color: gold;
+    padding: 8px;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+}
+
+/*****************************************************/
+/*****************************************************/
+/********************* NAVBAR ************************/
+/*****************************************************/
+/*****************************************************/
+
+nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.nav-small {
+    height: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-tabs {
+    display: flex;
+    padding: 0;
+}
+
+a:visited {
+    color: darkslategray;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+.nav-item a {
+    width: 100%;
+    display: block;
+}
+
+.cs {
+    display: flex;
+}
+
+.collapse-button {
+    padding: 3px;
+    height: 30px;
+    width: 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: cadetblue;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+@media all and (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-small {
+        width: 100%;
+    }
+
+    .collapse-button{
+        display: flex;
+    }
+
+    #collapseF,
+    #collapseS,
+    #collapseT {
+        width: 75%;
+        border: 1px solid black;
+    }
+
+    .nav-tabs {
+        display: none;
+        width: 100%;
+        background-color: cadetblue;
+        padding: 0;
+        border-radius: 0 8px 8px 8px;
+        transition: 5px;
+    }
+
+    .nav-item {
+        width: 100%;
+        display: block;
+        padding-right: 0;
+    }
+
+    .nav-item a {
+        padding: 8px;
+    }
+
+    .nav-item a,
+    .nav-item a:visited {
+        color: white;
+    }
+
+    .nav-item a:hover, .nav-item a:visited:hover {
+        background-color:rgb(51, 86, 87);
+    }
+}
+
+/*****************************************************/
+/*****************************************************/
+/********************* FOOTER ************************/
+/*****************************************************/
+/*****************************************************/
+
+footer {
+    font-size: small;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer strong {
+    font-size: medium;
+}
+
+footer li {
+    padding: 5px 0 5px 0;
+}
+
+.my-links ul {
+    display: flex;
+
+}
+
+/*****************************************************/
+/*****************************************************/
+/********************* MAIN **************************/
+/*****************************************************/
+/*****************************************************/
+
+main {
+    margin: 10px;
+}
+
+/*****************************************************/
+/*****************************************************/
+/********************* RENT **************************/
+/*****************************************************/
+/*****************************************************/
+
+.rent-main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.rent-main img {
+    max-width: 70%;
+    max-height: 70vh;
+    border-radius: 10px;
+}
+
+.rent-main div {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+
+
+
+.colorC {
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.colorS {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border-radius: 0%;
+    display: inline-block;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card-title {
+    margin: 0 0 4px;
+}
+
+.options {
+    border-radius: 0%;
+}
