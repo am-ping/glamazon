@@ -5,8 +5,12 @@ import Link from 'next/link'
 export default function WomenDropdown() {
 
     function dropdown() {
-        let menMenu = document.getElementById("women-dropdown")
-        menMenu.classList.toggle('hidden')
+        let menMenu = document.getElementById("men-dropdown")
+        let womenMenu = document.getElementById("women-dropdown")
+        womenMenu.classList.toggle('hidden')
+        if (menMenu.classList.contains !== 'hidden') {
+            menMenu.classList.add('hidden')
+        }
     }
 
     return (

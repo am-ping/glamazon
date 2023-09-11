@@ -28,23 +28,24 @@ export default async function Page({ params }) {
     return (
         <>
             <h2 className="display-3 mb-4">{category.toUpperCase()} FOR MEN</h2>
-            <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4">{Array.from(products).map(item => {
+            <div className="cards">{Array.from(products).map(item => {
+                console.log(item.img)
                 return (
                     <>
-                        <div key={item._id} className="col" data-bs-toggle="modal" data-bs-target={`#productModal${item._id}`}>
-                            <div className="card h-100">
-                                <Image src={item.img} className="card-img-top h-100" alt={`Picture of Men's ${item.title}`} fill/>
-                                <div className="card-body">
-                                    <h6 className="card-title lead">{item.title}</h6>
+                        <div key={item._id} className="card">
+                            {/* <Image src={item.img} alt={`Picture of Men's ${item.title}`} fill/> */}
+                            <div className="card-body">
+                                <div className="price-colors">
                                     <p className="card-title lead">${item.price}</p>
                                     <div>{item.colors.map((color,id) => {
-                                        return <span key={id} className="colorC" style={{backgroundColor:color}}></span>
+                                    return <span key={id} className="colorC" style={{backgroundColor:color}}></span>
                                     })}</div>
                                 </div>
+                                <h6 className="card-title lead">{item.title}</h6>
                             </div>
                         </div>
 
-                        <div className="modal fade" id={`productModal${item._id}`} tabIndex={-1} aria-labelledby="productModalLabel" aria-hidden="true">
+                        {/* <div className="modal fade" id={`productModal${item._id}`} tabIndex={-1} aria-labelledby="productModalLabel" aria-hidden="true">
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -97,7 +98,7 @@ export default async function Page({ params }) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </>)
             })}</div>
         </>

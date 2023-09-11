@@ -11,25 +11,29 @@ import WomenDropdown from './w-dropdown'
 
 export default function Navbar() {
 
+    function hide() {
+        let menMenu 
+    }
+
     return (
         <>
             <div className="notice">
                 Some products are out of stock. Sorry for the inconvenience.
             </div>
-            <Link href="/" className='logo'><h1>Glamazon</h1></Link>
             <nav>
                 <div className='nav-small'>
                     <p className='cart'>Cart</p>
+                    <Link href="/" className='logo m'><h1>Glamazon</h1></Link>
                     <Collapse />
                 </div>
                 <ul className="nav-tabs" id="myNav">
-                    <li className='nav-item'><Link href="/">Home</Link></li>
                     <MenDropdown />
                     <WomenDropdown />
-                    <li className='nav-item'><Link href="/rent">Rent-A-Swag</Link></li>
+                    <li className='nav-item'><Link href="/rent">Rent</Link></li>
                     <li className='nav-item'><Link href="/sale">Sale</Link></li>
                     <li className='nav-item'><Link href="/about">About</Link></li>
                 </ul>
+                <Link href="/" className='logo d'><h1>Glamazon</h1></Link>
             </nav>
         </>
     )

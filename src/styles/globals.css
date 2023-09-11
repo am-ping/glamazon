@@ -13,12 +13,12 @@ body {
     background-color:honeydew;
 }
 
-/* 
+
 .card {
     height: 100px;
     width: 100px;
     border: 2px solid black
-} */
+}
 
 div.notice {
     font-size: small;
@@ -43,7 +43,7 @@ nav {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px 0 10px;
+    padding: 10px;
 }
 
 .nav-small {
@@ -62,10 +62,16 @@ nav {
 a:visited,
 .dropdown {
     color: darkslategray;
+    cursor: pointer;
 }
 
 .nav-item {
     padding-right: 20px;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .nav-item a,
@@ -113,7 +119,19 @@ a:visited,
     border-radius: 5px;
 }
 
+.m {
+    display: none
+}
+
 @media all and (max-width: 650px) {
+
+    .m {
+        display: block;
+    }
+
+    .d {
+        display: none;
+    }
 
     nav {
         flex-direction: column;
@@ -140,7 +158,6 @@ a:visited,
         background-color: cadetblue;
         padding: 0;
         border-radius: 0 8px 8px 8px;
-        transition: 5px;
     }
 
     .nav-item {
@@ -166,7 +183,7 @@ a:visited,
     .nav-item a:visited:hover,
     .dropdown-item:hover {
         background-color:rgb(51, 86, 87);
-        border-radius: 5px;
+        border-radius: 8px;
     }
 
     .dropdown-menu {
@@ -204,7 +221,7 @@ footer li {
 
 .my-links ul {
     display: flex;
-
+    justify-content:space-around;
 }
 
 /*****************************************************/
